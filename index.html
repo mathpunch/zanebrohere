@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Special Popup</title>
+  <script>
+    window.onload = function() {
+      // Create the popup container
+      var popup = document.createElement("div");
+      popup.style.position = "fixed";
+      popup.style.top = "0";
+      popup.style.left = "0";
+      popup.style.width = "100vw";
+      popup.style.height = "100vh";
+      popup.style.background = "rgba(0,0,0,0.85)";
+      popup.style.display = "flex";
+      popup.style.justifyContent = "center";
+      popup.style.alignItems = "center";
+      popup.style.zIndex = "1000";
+
+      // Content area (centered box)
+      var content = document.createElement("div");
+      content.style.background = "#fff";
+      content.style.padding = "32px";
+      content.style.borderRadius = "12px";
+      content.style.boxShadow = "0 2px 24px rgba(0,0,0,0.4)";
+      content.style.textAlign = "center";
+      content.style.maxWidth = "90vw";
+      content.style.maxHeight = "90vh";
+      content.style.overflowY = "auto";
+
+      content.innerHTML = `
+        <p>
+          If Your Name is Zane, I have made another one only for you.<br>
+          Contact me Zane for the password.<br>
+          If you don't know it, here it is:<br>
+          <a href="https://heyzaneshh.vercel.app/index-protected.html" target="_blank" style="color: #007bff; text-decoration: underline;">
+            https://heyzaneshh.vercel.app/index-protected.html
+          </a>
+        </p>
+        <button id="closePopup" style="margin-top: 16px; padding: 10px 20px; font-size: 1rem;">Close</button>
+      `;
+
+      popup.appendChild(content);
+      document.body.appendChild(popup);
+
+      // Close button functionality
+      document.getElementById("closePopup").onclick = function() {
+        popup.remove();
+      };
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>
